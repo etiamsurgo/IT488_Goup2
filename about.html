@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>FlavorFusion - About</title>
+</head>
+<body>
+  <script>
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML('afterbegin', data);
+      });
+  </script>
+  <div class="banner">
+    <h1>FlavorFusion - About Us</h1>
+  </div>
+  <p>***This is the about page content. You can describe your website or yourself here.***</p>
+</body>
+</html>

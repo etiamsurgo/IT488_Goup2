@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>FlavorFusion - Recipes</title>
+</head>
+<body>
+  <script>
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML('afterbegin', data);
+      });
+  </script>
+  <div class="banner">
+    <h1>FlavorFusion - Recipes</h1>
+  </div>
+  <div class="recipe">
+    <h2>Spaghetti Carbonara</h2>
+    <p>A delicious pasta dish made with eggs, cheese, pancetta, and black pepper.</p>
+    <img src="spaghetti_carbonara.jpg" alt="Spaghetti Carbonara">
+  </div>
+  <div class="recipe">
+    <h2>Chicken Stir-Fry</h2>
+    <p>Quick and easy chicken stir-fry with vegetables and soy sauce.</p>
+    <img src="chicken_stir_fry.jpg" alt="Chicken Stir-Fry">
+  </div>
+</body>
+</html>
