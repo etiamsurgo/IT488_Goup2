@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -34,132 +34,135 @@
   </style>
 </head>
 <body>
-  <div class="banner">
-    <h1>FlavorFusion - Recipes</h1>
-  </div>
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            });
+    </script>
+    <div class="banner">
+        <h1>FlavorFusion - Recipes</h1>
+    </div>
 
-  <div id="recipeContainer" class="recipe-container"></div>
+    <div id="recipeContainer" class="recipe-container"></div>
 
-  <script>
-    // Define recipe data as an array of objects
-    const recipes = [
-      {
-        title: "Spaghetti Carbonara",
-        description: "A delicious pasta dish made with eggs, cheese, pancetta, and black pepper.",
-        ingredients: [
-          "200g spaghetti",
-          "100g pancetta or guanciale, diced",
-          "2 large eggs",
-          "50g grated Pecorino Romano cheese",
-          "Freshly ground black pepper"
-        ],
-        instructions: [
-          "Cook spaghetti in salted boiling water until al dente.",
-          "Meanwhile, fry pancetta in a pan until crispy.",
-          "In a bowl, whisk eggs with grated cheese and plenty of black pepper.",
-          "Drain cooked spaghetti (reserving some pasta water) and toss with pancetta in the pan.",
-          "Remove pan from heat and quickly stir in egg mixture, using residual heat to create a creamy sauce.",
-          "Add reserved pasta water as needed to adjust consistency. Serve immediately."
-        ]
-      },
-      {
-        title: "Chicken Stir-Fry",
-        description: "Quick and easy chicken stir-fry with vegetables and soy sauce.",
-        ingredients: [
-          "400g chicken breast, sliced",
-          "2 cups mixed vegetables (bell peppers, broccoli, carrots, snow peas)",
-          "3 cloves garlic, minced",
-          "1 tablespoon soy sauce",
-          "1 tablespoon oyster sauce",
-          "1 teaspoon sesame oil",
-          "Salt and pepper to taste"
-        ],
-        instructions: [
-          "Heat oil in a wok or skillet over high heat.",
-          "Stir-fry garlic until fragrant, then add chicken and cook until browned.",
-          "Add mixed vegetables and stir-fry until tender-crisp.",
-          "Season with soy sauce, oyster sauce, sesame oil, salt, and pepper.",
-          "Continue cooking for another minute, then serve hot."
-        ]
+const recipes = [
+  {
+    title: "Spaghetti Carbonara",
+    description: "A delicious pasta dish made with eggs, cheese, pancetta, and black pepper.",
+    ingredients: [
+      "200g spaghetti",
+      "100g pancetta or guanciale, diced",
+      "2 large eggs",
+      "50g grated Pecorino Romano cheese",
+      "Freshly ground black pepper"
+    ],
+    instructions: [
+      "Cook spaghetti in salted boiling water until al dente.",
+      "Meanwhile, fry pancetta in a pan until crispy.",
+      "In a bowl, whisk eggs with grated cheese and plenty of black pepper.",
+      "Drain cooked spaghetti (reserving some pasta water) and toss with pancetta in the pan.",
+      "Remove pan from heat and quickly stir in egg mixture, using residual heat to create a creamy sauce.",
+      "Add reserved pasta water as needed to adjust consistency. Serve immediately."
+    ]
+  },
+  {
+    title: "Chicken Stir-Fry",
+    description: "Quick and easy chicken stir-fry with vegetables and soy sauce.",
+    ingredients: [
+      "400g chicken breast, sliced",
+      "2 cups mixed vegetables (bell peppers, broccoli, carrots, snow peas)",
+      "3 cloves garlic, minced",
+      "1 tablespoon soy sauce",
+      "1 tablespoon oyster sauce",
+      "1 teaspoon sesame oil",
+      "Salt and pepper to taste"
+    ],
+    instructions: [
+      "Heat oil in a wok or skillet over high heat.",
+      "Stir-fry garlic until fragrant, then add chicken and cook until browned.",
+      "Add mixed vegetables and stir-fry until tender-crisp.",
+      "Season with soy sauce, oyster sauce, sesame oil, salt, and pepper.",
+      "Continue cooking for another minute, then serve hot."
+    ]
+  },
+  {
+    title: "Pad Thai",
+    description: "Pad Thai is a popular Thai dish.",
+    ingredients: [
+      "fish sauce",
+      "ketchup",
+      "brown sugar",
+      "soy sauce",
+      "Sriracha",
+      "tamarind paste",
+      "noodles",
+      "meat of your choice",
+      "vegetables of your choice"
+    ],
+    instructions: [
+      "Make sauce with fish sauce, ketchup, brown sugar, soy sauce, Sriracha, and tamarind paste.",
+      "Cook noodles according to package instructions.",
+      "Mix noodles with the sauce and add preferred meat and vegetables."
+    ]
+  },
+  {
+    title: "Pad Kra Pao",
+    description: "Thai basil stir-fry with your choice of meat.",
+    ingredients: [
+      "garlic",
+      "Thai chilies",
+      "brown sugar",
+      "soy sauce",
+      "fish sauce",
+      "oil",
+      "water",
+      "basil",
+      "meat of your choice"
+    ],
+    instructions: [
+      "Heat oil in a pan, sauté garlic and Thai chilies.",
+      "Add meat and cook until browned.",
+      "Season with brown sugar, soy sauce, fish sauce, and a little water.",
+      "Stir in basil leaves and cook until wilted.",
+      "Serve hot with rice."
+    ]
+  }
+];
+
+
+        // Function to display recipes dynamically
+        function displayRecipes() {
+            const recipeContainer = document.getElementById('recipeContainer');
+
+            // Iterate through recipes and create HTML for each recipe
+            recipes.forEach(recipe => {
+                const recipeElement = document.createElement('div');
+                recipeElement.classList.add('recipe');
+
+                // Construct HTML content for each recipe
+                recipeElement.innerHTML = `
+                  <h2>${recipe.title}</h2>
+                  <p>${recipe.description}</p>
+                  <h3>Ingredients:</h3>
+                  <ul>
+                    ${recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+                  </ul>
+                  <h3>Instructions:</h3>
+                  <ol>
+                    ${recipe.instructions.map(instruction => `<li>${instruction}</li>`).join('')}
+                  </ol>
+                 
+                `;
+
+                // Append recipe element to recipeContainer
+                recipeContainer.appendChild(recipeElement);
+            });
         }
-        ,
-        {
-            title: "Pad Thai",
-            description: "Pad Thai is one of the menu that everyone like. This recipe is a easy way to make PadThai.",
-            ingredients: [
-                "fish sauce",
-                "ketchup",
-                "brown sugar",
-                "soy sauce",
-                "Sriracha",
-                "tamarind paste",
-                "noodles",
-                "meat of your choice",
-                "veggetables of your choice"
 
-            ],
-            instructions: [
-                "Making sauce with fish sauce, ketchup, brown sugar, soy sauce, sriracha, and tamarind paste.",
-                "Noodles, there are different types of noodle. It depends on which noodles you want. And just follow the package instructions.",
-                "Mixing noodle with the sauce and you can add meat or veggetables that you prefer."
-            ]
-        }
-        ,
-        {
-            title: "Pad Kra Pao",
-            description: "Pad Kra Pao is a Thai food that can make everyone fall in love with Thai styple.",
-            ingredients: [
-                "garlic",
-                "Thai chillies",
-                "brown sugar",
-                "soy sauce",
-                "fish sauce",
-                "oil",
-                "water",
-                "basil",
-                "meat of your choice"
-            ],
-            instructions: [
-                "using medium heat, add oil, garlic, and chilies.",
-                "After garlic turns yellow adding meat.",
-                "Adding brown sugar, oyster sauce, soy sauce, fish sauce, and a little of water.",
-                "Stir-fry for a few minutes then adding basil.",
-                "Serve with rice."
-            ]
-        }
-
-    ];
-
-    // Function to display recipes dynamically
-    function displayRecipes() {
-      const recipeContainer = document.getElementById('recipeContainer');
-
-      // Iterate through recipes and create HTML for each recipe
-      recipes.forEach(recipe => {
-        const recipeElement = document.createElement('div');
-        recipeElement.classList.add('recipe');
-
-        // Construct HTML content for each recipe
-        recipeElement.innerHTML = `
-          <h2>${recipe.title}</h2>
-          <p>${recipe.description}</p>
-          <h3>Ingredients:</h3>
-          <ul>
-            ${recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
-          </ul>
-          <h3>Instructions:</h3>
-          <ol>
-            ${recipe.instructions.map(instruction => `<li>${instruction}</li>`).join('')}
-          </ol>
-        `;
-
-        // Append recipe element to recipeContainer
-        recipeContainer.appendChild(recipeElement);
-      });
-    }
-
-    // Call displayRecipes function when the page content is fully loaded
-    document.addEventListener('DOMContentLoaded', displayRecipes);
-  </script>
+        // Call displayRecipes function when the page content is fully loaded
+        document.addEventListener('DOMContentLoaded', displayRecipes);
+    </script>
 </body>
 </html>
