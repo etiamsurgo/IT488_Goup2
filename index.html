@@ -7,17 +7,41 @@
   <title>FlavorFusion - Home</title>
 </head>
 <body>
-  <script>
-    fetch('menu.html')
-      .then(response => response.text())
-      .then(data => {
-        document.body.insertAdjacentHTML('afterbegin', data);
-      });
-  </script>
-  <!-- Banner -->
-  <div class="banner">
-    <h1>Welcome to FlavorFusion!</h1>
-  </div>
-  <p>This is the homepage content. Feel free to introduce your website here.</p>
+    <img src="photo/logo.jpg" width="400" height="400" alt="Home Photo">
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            });
+    </script>
+    <!-- Banner -->
+    <div class="banner">
+        <p>
+            Introducing FlavorFusion, the ultimate destination for food enthusiasts to discover,
+            share, and explore delicious recipes worldwide! Whether you're a seasoned chef or a passionate
+            home cook, FlavorFusion offers diverse recipes to suit every palate and occasion.
+        </p>
+
+        <div class="Image">
+            <img src="photo/food1.jpg" width="400" height="400" alt="Home Photo">
+            <img src="photo/homePic.jpg" width="400" height="400" alt="Home Photo">
+            <img src="photo/food2.jpg" width="400" height="400" alt="Home Photo">
+        </div>
+        <h3>
+            Recipe Highlights
+        </h3>
+        <h2>
+            Recipe City?
+        </h2>
+        <p>
+            Visit our Recipe City section and discover a world of delights. Simply register with your email to
+            create a profile. You will stay informed about food trends and any community featured recipes by subscribing
+            to our newsletter and dive into our Recipe City Promotions and Events. Whether you're in the mood for starters,
+            main courses, desserts, or drinks, we've got everything you need.
+        </p>
+
+    </div>
+    <p>This is the homepage content. Feel free to introduce your website here.</p>
 </body>
 </html>
