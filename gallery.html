@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,27 +8,27 @@
   <title>FlavorFusion - Gallery</title>
 </head>
 <body>
-    <script>
-        fetch('menu.html')
-            .then(response => response.text())
-            .then(data => {
-                document.body.insertAdjacentHTML('afterbegin', data);
-            });
-    </script>
-    <div class="banner">
-        <h1>FlavorFusion - Gallery</h1>
-    </div>
+  <script>
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML('afterbegin', data);
+      });
+  </script>
+  <div class="banner">
+    <h1>FlavorFusion - Gallery</h1>
+  </div>
 
 
-    <div class="container">
-        <img src="photo/spaghetti.jpg" width="400" height="400" alt="spaghetti">
-        <img src="photo/food1.jpg" width="400" height="400" alt="spaghetti">
-        <img src="photo/food2.jpg" width="400" height="400" alt="spaghetti">
-        <img src="photo/chicken stirfry.jpg" width="400" height="400" alt="spaghetti">
-        <img src="photo/spaghetti.jpg" width="400" height="400" alt="spaghetti">
-        <img src="photo/chicken stirfry.jpg" width="400" height="400" alt="spaghetti">
-    </div>
+  <div class="container">
+    <img src="photo/spaghetti.jpg" width="400" height="400" alt="spaghetti">
+    <img src="photo/food1.jpg" width="400" height="400" alt="spaghetti">
+    <img src="photo/food2.jpg" width="400" height="400" alt="spaghetti">
+    <img src="photo/chicken stirfry.jpg" width="400" height="400" alt="spaghetti">
+    <img src="photo/spaghetti.jpg" width="400" height="400" alt="spaghetti">
+    <img src="photo/chicken stirfry.jpg" width="400" height="400" alt="spaghetti">
+  </div>
 
-    
+
 </body>
 </html>

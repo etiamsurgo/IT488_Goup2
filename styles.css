@@ -1,4 +1,4 @@
-﻿/* Reset default margin and padding */
+﻿﻿ /* Reset default margin and padding */
 body, h1, h2, h3, p, ul, li, form, input, textarea {
   margin: 0;
   padding: 0;
@@ -7,10 +7,10 @@ body, h1, h2, h3, p, ul, li, form, input, textarea {
 
 /* Body styles */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #0d1321;
-    color: #f0ebd8;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #0d1321;
+  color: #f0ebd8;
 }
 
 /* Container styles */
@@ -30,32 +30,33 @@ header {
 
 /* Navigation styles */
 .nav-bar {
-    width: 100%;
-    height: 100px;
-    background-color: #0d1321;
-    text-align: center;
-    margin-bottom: 20px;
-}
-.logo{
-    display: inline-block;
-    vertical-align: top;
-    width: 100px;
-    height: 100px;
+  width: 100%;
+  height: 100px;
+  background-color: #0d1321;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-  nav a {
-    display: inline-block;
-    padding: 30px 50px;
-    margin-right: 10px;
-    color: #f0ebd8;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+.logo {
+  display: inline-block;
+  vertical-align: top;
+  width: 100px;
+  height: 100px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 30px 50px;
+  margin-right: 10px;
+  color: #f0ebd8;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+  nav a:hover {
+    background-color: #eee;
   }
-
-    nav a:hover {
-      background-color: #eee;
-    }
 
 /* Main content styles */
 main {
@@ -140,10 +141,11 @@ input[type="submit"] {
   }
 
 }
+
 .ImageHolder {
-    text-align:center;
-}
-.Image {
-    display: inline-block;
+  text-align: center;
 }
 
+.Image {
+  display: inline-block;
+}
