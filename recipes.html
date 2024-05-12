@@ -69,6 +69,8 @@
                     "Add reserved pasta water as needed to adjust consistency. Serve immediately."
                 ]
             },
+            
+                       
             {
                 title: "Chicken Stir-Fry",
                 description: "Quick and easy chicken stir-fry with vegetables and soy sauce.",
@@ -148,17 +150,18 @@
 
                 // Construct HTML content for each recipe
                 recipeElement.innerHTML = `
-              <h2>${recipe.title}</h2>
-              <p>${recipe.description}</p>
-              <h3>Ingredients:</h3>
-              <ul>
-                ${recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
-              </ul>
-              <h3>Instructions:</h3>
-              <ol>
-                ${recipe.instructions.map(instruction => `<li>${instruction}</li>`).join('')}
-              </ol>
-            `;
+                  <h2>${recipe.title}</h2>
+                  <p>${recipe.description}</p>
+                  <h3>Ingredients:</h3>
+                  <ul>
+                    ${recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+                  </ul>
+                  <h3>Instructions:</h3>
+                  <ol>
+                    ${recipe.instructions.map(instruction => `<li>${instruction}</li>`).join('')}
+                  </ol>
+                 
+                `;
 
                 // Append recipe element to recipeContainer
                 recipeContainer.appendChild(recipeElement);

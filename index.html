@@ -7,14 +7,13 @@
   <title>FlavorFusion - Home</title>
 </head>
 <body>
-    <img src="photo/logo.jpg" width="400" height="400" alt="Home Photo">
-    <script>
-        fetch('menu.html')
-            .then(response => response.text())
-            .then(data => {
-                document.body.insertAdjacentHTML('afterbegin', data);
-            });
-    </script>
+      <script>
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML('afterbegin', data);
+      });
+  </script>
     <!-- Banner -->
     <div class="banner">
         <p>

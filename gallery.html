@@ -3,22 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="gallery.css">
   <title>FlavorFusion - Gallery</title>
 </head>
 <body>
-  <script>
-    fetch('menu.html')
-      .then(response => response.text())
-      .then(data => {
-        document.body.insertAdjacentHTML('afterbegin', data);
-      });
-  </script>
-  <div class="banner">
-    <h1>FlavorFusion - Gallery</h1>
-  </div>
-  <img src="gallery_image1.jpg" alt="Gallery Image 1">
-  <img src="gallery_image2.jpg" alt="Gallery Image 2">
-  <img src="gallery_image3.jpg" alt="Gallery Image 3">
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            });
+    </script>
+    <div class="banner">
+        <h1>FlavorFusion - Gallery</h1>
+    </div>
+
+
+    <div class="container">
+        <img src="photo/spaghetti.jpg" width="400" height="400" alt="spaghetti">
+        <img src="photo/food1.jpg" width="400" height="400" alt="spaghetti">
+        <img src="photo/food2.jpg" width="400" height="400" alt="spaghetti">
+        <img src="photo/chicken stirfry.jpg" width="400" height="400" alt="spaghetti">
+        <img src="photo/spaghetti.jpg" width="400" height="400" alt="spaghetti">
+        <img src="photo/chicken stirfry.jpg" width="400" height="400" alt="spaghetti">
+    </div>
+
+    
 </body>
 </html>
