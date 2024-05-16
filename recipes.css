@@ -1,0 +1,48 @@
+﻿/* Center the drop-down */
+.center {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Center the "Featured Recipe" heading */
+.center-text {
+  text-align: center;
+  color: #f0ebd8;
+}
+
+/* Recipe container styles */
+.recipe-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Other existing styles */
+.recipe {
+  width: 45%;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: #4a4e69;
+}
+
+  .recipe h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #4a4e69;
+  }
+
+  .recipe p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #4a4e69;
+  }
+
+  .recipe img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
