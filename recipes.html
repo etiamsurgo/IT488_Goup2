@@ -4,34 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="recipes.css">
   <title>FlavorFusion - Recipe City</title>
-  <style>
-    /* Add CSS styles for recipe display */
-    .recipe {
-      margin: 20px;
-      padding: 20px;
-      background-color: #f9f9f9;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-      .recipe h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
-      }
-
-      .recipe p {
-        font-size: 16px;
-        line-height: 1.5;
-        margin-bottom: 15px;
-      }
-
-      .recipe img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-      }
-  </style>
 </head>
 <body>
   <script>
@@ -44,6 +18,18 @@
 
   <div class="banner">
     <h1>Recipe City</h1>
+  </div>
+
+  <div class="center">
+    <label for="recipeSelect">Select a Recipe:</label>
+    <select id="recipeSelect">
+      <option value="">--Choose a Recipe--</option>
+    </select>
+  </div>
+
+  <div id="featuredRecipeContainer">
+    <h2 class="center-text">Featured Recipe</h2>
+    <div id="featuredRecipe" class="recipe-container"></div>
   </div>
 
   <div id="recipeContainer" class="recipe-container"></div>
@@ -148,15 +134,14 @@
           "1 tsp onion powder",
           "1 tsp creole seasoning",
           "1 tsp seasoned salt",
-          "1/2 tsp tumeric",
-          "1/2 freshly ground black pepper",
-
+          "1/2 tsp turmeric",
+          "1/2 freshly ground black pepper"
         ],
         instructions: [
           "Add the butter to a large stock pot until melted.",
-          "Add the onion and stirl until softened.",
+          "Add the onion and stir until softened.",
           "Place the pieces of chicken into the pot and add water.",
-          "Stir in kosher salt, dried parlsey, black pepper, garlic powder, onion powder, creole seasoning, tumeric, and bay leaf.",
+          "Stir in kosher salt, dried parsley, black pepper, garlic powder, onion powder, creole seasoning, turmeric, and bay leaf.",
           "After an hour, or until the chicken is cooked through, remove the chicken from the liquid and remove the bones.",
           "Remove two cups of liquid and the bay leaf.",
           "Stir in the rice, chicken bouillon, and seasoned salt and reduce heat to low.",
@@ -189,25 +174,66 @@
           "Heat vegetable oil/lard in a dutch oven and cook the andouille sausage.",
           "Add onion, celery, red bell pepper and season with salt. Stir until soft.",
           "Add garlic and stir until fragrant, then add cayenne pepper, sage, and fresh black pepper.",
-          "Add the beans, turkey wings, thyme and bay leaves to the dutch oven and add 6 - 8 cups.",
+          "Add the beans, turkey wings, thyme, and bay leaves to the dutch oven and add 6 - 8 cups.",
           "Cover and bring to a boil and reduce to a bare simmer for 1 1/2 - 2 1/2 hours.",
-          "Remove the lid and stir occassionaly until thickened and add hot sauce to taste.",
+          "Remove the lid and stir occasionally until thickened and add hot sauce to taste.",
           "Serve the red beans over white rice."
         ]
       }
     ];
 
-    // Function to display recipes dynamically
-    function displayRecipes() {
-      const recipeContainer = document.getElementById('recipeContainer');
+    // Function to populate the drop-down menu
+    function populateRecipeDropdown() {
+      const recipeSelect = document.getElementById('recipeSelect');
+      recipes.forEach((recipe, index) => {
+        const option = document.createElement('option');
+        option.value = index;
+        option.textContent = recipe.title;
+        recipeSelect.appendChild(option);
+      });
+    }
 
-      // Iterate through recipes and create HTML for each recipe
-      recipes.forEach(recipe => {
+    // Function to display the selected recipe
+    function displaySelectedRecipe(index) {
+      const recipeContainer = document.getElementById('recipeContainer');
+      const featuredRecipeContainer = document.getElementById('featuredRecipeContainer');
+      recipeContainer.innerHTML = ''; // Clear previous recipe
+
+      if (index === "") {
+        featuredRecipeContainer.style.display = 'block'; // Show featured recipe
+        displayRandomFeaturedRecipe();
+      } else {
+        featuredRecipeContainer.style.display = 'none'; // Hide featured recipe
+        const recipe = recipes[index];
         const recipeElement = document.createElement('div');
         recipeElement.classList.add('recipe');
 
-        // Construct HTML content for each recipe
         recipeElement.innerHTML = `
+              <h2>${recipe.title}</h2>
+              <p>${recipe.description}</p>
+              <h3>Ingredients:</h3>
+              <ul>
+                ${recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+              </ul>
+              <h3>Instructions:</h3>
+              <ol>
+                ${recipe.instructions.map(instruction => `<li>${instruction}</li>`).join('')}
+              </ol>
+            `;
+
+        recipeContainer.appendChild(recipeElement);
+      }
+    }
+
+    // Function to display a random featured recipe
+    function displayRandomFeaturedRecipe() {
+      const randomIndex = Math.floor(Math.random() * recipes.length);
+      const featuredRecipeContainer = document.getElementById('featuredRecipe');
+      const recipe = recipes[randomIndex];
+      const recipeElement = document.createElement('div');
+      recipeElement.classList.add('recipe');
+
+      recipeElement.innerHTML = `
             <h2>${recipe.title}</h2>
             <p>${recipe.description}</p>
             <h3>Ingredients:</h3>
@@ -220,13 +246,20 @@
             </ol>
           `;
 
-        // Append recipe element to recipeContainer
-        recipeContainer.appendChild(recipeElement);
-      });
+      featuredRecipeContainer.innerHTML = ''; // Clear previous featured recipe
+      featuredRecipeContainer.appendChild(recipeElement);
     }
 
-    // Call displayRecipes function when the page content is fully loaded
-    document.addEventListener('DOMContentLoaded', displayRecipes);
+    // Event listener for recipe selection
+    document.getElementById('recipeSelect').addEventListener('change', function () {
+      displaySelectedRecipe(this.value);
+    });
+
+    // Call populateRecipeDropdown on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      populateRecipeDropdown();
+      displaySelectedRecipe(''); // Show featured recipe on initial load
+    });
   </script>
 </body>
 </html>
