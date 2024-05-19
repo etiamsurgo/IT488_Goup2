@@ -188,7 +188,7 @@
         image: "photo/redbean.jpg"
       }
     ];
-    // Function to populate the drop-down menu
+
     function populateRecipeDropdown() {
       const recipeSelect = document.getElementById('recipeSelect');
       recipes.forEach((recipe, index) => {
@@ -199,7 +199,6 @@
       });
     }
 
-    // Function to display the selected recipe
     function displaySelectedRecipe(index) {
       const recipeContainer = document.getElementById('recipeContainer');
       const featuredRecipeContainer = document.getElementById('featuredRecipeContainer');
@@ -215,8 +214,33 @@
         recipeElement.classList.add('recipe');
 
         recipeElement.innerHTML = `
+                <h2>${recipe.title}</h2>
+                <img src = "${recipe.image}" alt="${recipe.title}" width="200" height = "200">
+                <p>${recipe.description}</p>
+                <h3>Ingredients:</h3>
+                <ul>
+                  ${recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+                </ul>
+                <h3>Instructions:</h3>
+                <ol>
+                  ${recipe.instructions.map(instruction => `<li>${instruction}</li>`).join('')}
+                </ol>
+              `;
+
+        recipeContainer.appendChild(recipeElement);
+      }
+    }
+
+    function displayRandomFeaturedRecipe() {
+      const randomIndex = Math.floor(Math.random() * recipes.length);
+      const featuredRecipeContainer = document.getElementById('featuredRecipe');
+      const recipe = recipes[randomIndex];
+      const recipeElement = document.createElement('div');
+      recipeElement.classList.add('recipe');
+
+      recipeElement.innerHTML = `
               <h2>${recipe.title}</h2>
-              <img src = "${recipe.image}" alt="${recipe.title}" width="200" height = "200">
+              <img src="${recipe.image}" alt="${recipe.title}" width="200" height="200">
               <p>${recipe.description}</p>
               <h3>Ingredients:</h3>
               <ul>
@@ -228,41 +252,14 @@
               </ol>
             `;
 
-        recipeContainer.appendChild(recipeElement);
-      }
-    }
-
-    // Function to display a random featured recipe
-    function displayRandomFeaturedRecipe() {
-      const randomIndex = Math.floor(Math.random() * recipes.length);
-      const featuredRecipeContainer = document.getElementById('featuredRecipe');
-      const recipe = recipes[randomIndex];
-      const recipeElement = document.createElement('div');
-      recipeElement.classList.add('recipe');
-
-      recipeElement.innerHTML = `
-            <h2>${recipe.title}</h2>
-            <p>${recipe.description}</p>
-            <h3>Ingredients:</h3>
-            <ul>
-              ${recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
-            </ul>
-            <h3>Instructions:</h3>
-            <ol>
-              ${recipe.instructions.map(instruction => `<li>${instruction}</li>`).join('')}
-            </ol>
-          `;
-
       featuredRecipeContainer.innerHTML = ''; // Clear previous featured recipe
       featuredRecipeContainer.appendChild(recipeElement);
     }
 
-    // Event listener for recipe selection
     document.getElementById('recipeSelect').addEventListener('change', function () {
       displaySelectedRecipe(this.value);
     });
 
-    // Call populateRecipeDropdown on page load
     document.addEventListener('DOMContentLoaded', () => {
       populateRecipeDropdown();
       displaySelectedRecipe(''); // Show featured recipe on initial load
