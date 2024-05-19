@@ -1,0 +1,39 @@
+/* Center all <p> tags */
+p {
+    text-align: center;
+    align-content:center;
+}
+h2 {
+    text-align: center;
+    align-content: center;
+}
+h1 {
+    text-align: center;
+    align-content: center;
+}
+h3 {
+    text-align: center;
+    align-content: center;
+}
+/*Center all information*/
+/* Center images */
+.image-container {
+    text-align: center;
+}
+/* Center images */
+.image-container {
+    text-align: center;
+}
+
+.center-image {
+    display: inline-block;
+    max-width: 100%; /* Ensure responsiveness */
+    height: auto; /* Maintain aspect ratio */
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-block: auto;
+    width: 100%;
+}
