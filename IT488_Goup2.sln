@@ -14,25 +14,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		styles.css = styles.css
 	EndProjectSection
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "New Coding", ".", "{7BCE882B-B491-4251-A59D-B8409071868E}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "IT488_Goup2", ".", "{7BCE882B-B491-4251-A59D-B8409071868E}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8.1"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_57467"
-		Debug.AspNetCompiler.PhysicalPath = "..\New Coding\"
+		Debug.AspNetCompiler.PhysicalPath = "..\IT488_Goup2\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57467\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_57467"
-		Release.AspNetCompiler.PhysicalPath = "..\New Coding\"
+		Release.AspNetCompiler.PhysicalPath = "..\IT488_Goup2\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57467\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "57467"
-		SlnRelativePath = "..\New Coding\"
+		SlnRelativePath = "..\IT488_Goup2\"
 	EndProjectSection
 EndProject
 Global
