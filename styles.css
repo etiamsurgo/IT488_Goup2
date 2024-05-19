@@ -1,6 +1,6 @@
-﻿/* Reset default margin and padding */
+﻿﻿/* Reset default margin and padding */
 body, h1, h2, h3, p, ul, li, form, input, textarea {
-  margin: 0;
+  margin: 20px 130px 20px 130px;
   padding: 0;
   box-sizing: border-box;
 }

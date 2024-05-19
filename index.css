@@ -1,19 +1,7 @@
-/* Center all <p> tags */
-p {
+/* Center all tags */
+p, h1, h2, h3 {
     text-align: center;
     align-content:center;
-}
-h2 {
-    text-align: center;
-    align-content: center;
-}
-h1 {
-    text-align: center;
-    align-content: center;
-}
-h3 {
-    text-align: center;
-    align-content: center;
 }
 /*Center all information*/
 /* Center images */
