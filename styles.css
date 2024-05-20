@@ -1,6 +1,8 @@
-﻿﻿/* Reset default margin and padding */
+﻿/* styles.css */
+
+/* Reset default margin and padding */
 body, h1, h2, h3, p, ul, li, form, input, textarea {
-  margin: 20px 130px 20px 130px;
+  margin: 0; /* Changed margin to 0 */
   padding: 0;
   box-sizing: border-box;
 }
@@ -167,11 +169,11 @@ input[type="submit"] {
 
 /* Center all <p> tags */
 p {
-    text-align: center;
+  text-align: center;
 }
 
 hr {
-  border: none; /*/Remove default border */
-  border-top: 2px solid #000; /*Add a custom border */
-  margin: 20px 0; /*Add vertical spacing */
+  border: none; /* Remove default border */
+  border-top: 2px solid #000; /* Add a custom border */
+  margin: 20px 0; /* Add vertical spacing */
 }
