@@ -14,8 +14,13 @@
       .then(data => {
         document.body.insertAdjacentHTML('afterbegin', data);
       });
+    // Fetch and insert the footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML('beforeend', data);
+      });
   </script>
-
   <div class="banner">
     <h1>Recipe City</h1>
   </div>
@@ -214,18 +219,18 @@
         recipeElement.classList.add('recipe');
 
         recipeElement.innerHTML = `
-                <h2>${recipe.title}</h2>
-                <img src = "${recipe.image}" alt="${recipe.title}" width="200" height = "200">
-                <p>${recipe.description}</p>
-                <h3>Ingredients:</h3>
-                <ul>
-                  ${recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
-                </ul>
-                <h3>Instructions:</h3>
-                <ol>
-                  ${recipe.instructions.map(instruction => `<li>${instruction}</li>`).join('')}
-                </ol>
-              `;
+                  <h2>${recipe.title}</h2>
+                  <img src = "${recipe.image}" alt="${recipe.title}" width="200" height = "200">
+                  <p>${recipe.description}</p>
+                  <h3>Ingredients:</h3>
+                  <ul>
+                    ${recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+                  </ul>
+                  <h3>Instructions:</h3>
+                  <ol>
+                    ${recipe.instructions.map(instruction => `<li>${instruction}</li>`).join('')}
+                  </ol>
+                `;
 
         recipeContainer.appendChild(recipeElement);
       }
@@ -239,18 +244,18 @@
       recipeElement.classList.add('recipe');
 
       recipeElement.innerHTML = `
-              <h2>${recipe.title}</h2>
-              <img src="${recipe.image}" alt="${recipe.title}" width="200" height="200">
-              <p>${recipe.description}</p>
-              <h3>Ingredients:</h3>
-              <ul>
-                ${recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
-              </ul>
-              <h3>Instructions:</h3>
-              <ol>
-                ${recipe.instructions.map(instruction => `<li>${instruction}</li>`).join('')}
-              </ol>
-            `;
+                <h2>${recipe.title}</h2>
+                <img src="${recipe.image}" alt="${recipe.title}" width="200" height="200">
+                <p>${recipe.description}</p>
+                <h3>Ingredients:</h3>
+                <ul>
+                  ${recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+                </ul>
+                <h3>Instructions:</h3>
+                <ol>
+                  ${recipe.instructions.map(instruction => `<li>${instruction}</li>`).join('')}
+                </ol>
+              `;
 
       featuredRecipeContainer.innerHTML = ''; // Clear previous featured recipe
       featuredRecipeContainer.appendChild(recipeElement);
