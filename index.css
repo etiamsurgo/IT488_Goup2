@@ -1,8 +1,8 @@
 /* Center all tags */
 p, h1, h2, h3 {
   text-align: center;
-  align-content: center;
 }
+
 /* Center images */
 .image-container {
   text-align: center;
@@ -10,14 +10,7 @@ p, h1, h2, h3 {
 
 .center-image {
   display: inline-block;
-  max-width: 100%; /* Ensure responsiveness */
-  height: auto; /* Maintain aspect ratio */
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-block: auto;
-  width: 100%;
+  max-width: 40%; /* Ensure responsiveness */
+  height: 300px; /* Set a fixed height for the images */
+  margin: 10px; /* Optional: add some spacing between images */
 }
