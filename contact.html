@@ -1,10 +1,10 @@
-﻿﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="contact.css">
   <title>FlavorFusion - Contact</title>
 </head>
 <body>
@@ -14,19 +14,92 @@
       .then(data => {
         document.body.insertAdjacentHTML('afterbegin', data);
       });
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML('beforeend', data);
+      });
   </script>
   <div class="banner">
     <h1>Contact Us</h1>
   </div>
-  <p>Feel free to reach out to us using the form below:</p>
-  <form>
+  <p class="centered-paragraph">
+    Feel free to reach out to us using the form below:
+  </p>
+  <form id="contactForm">
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name"><br><br>
+    <input type="text" id="name" name="name" required>
+    <span class="error-message" id="nameError"></span>
+
     <label for="email">Email:</label>
-    <input type="email" id="email" name="email"><br><br>
-    <label for="message">Message:</label><br>
-    <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+    <input type="email" id="email" name="email" required>
+    <span class="error-message" id="emailError"></span>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+    <span class="error-message" id="messageError"></span>
+
     <input type="submit" value="Send">
   </form>
+
+  <script>
+    document.getElementById('name').addEventListener('blur', validateName);
+    document.getElementById('email').addEventListener('blur', validateEmail);
+    document.getElementById('message').addEventListener('blur', validateMessage);
+    document.getElementById('contactForm').addEventListener('submit', validateForm);
+
+    function validateName() {
+      const name = document.getElementById('name').value;
+      const nameError = document.getElementById('nameError');
+      const namePattern = /^[A-Za-z\s]+$/;
+
+      if (!namePattern.test(name)) {
+        nameError.textContent = 'Name must contain only letters.';
+        return false;
+      } else {
+        nameError.textContent = '';
+        return true;
+      }
+    }
+
+    function validateEmail() {
+      const email = document.getElementById('email').value;
+      const emailError = document.getElementById('emailError');
+
+      if (!email) {
+        emailError.textContent = 'Email is required.';
+        return false;
+      } else {
+        emailError.textContent = '';
+        return true;
+      }
+    }
+
+    function validateMessage() {
+      const message = document.getElementById('message').value;
+      const messageError = document.getElementById('messageError');
+
+      if (!message) {
+        messageError.textContent = 'Message is required.';
+        return false;
+      } else {
+        messageError.textContent = '';
+        return true;
+      }
+    }
+
+    function validateForm(event) {
+      const isNameValid = validateName();
+      const isEmailValid = validateEmail();
+      const isMessageValid = validateMessage();
+
+      if (!isNameValid || !isEmailValid || !isMessageValid) {
+        event.preventDefault();
+        alert('Please correct the errors in the form.');
+      } else {
+        alert('Form submitted successfully!');
+      }
+    }
+  </script>
 </body>
 </html>

@@ -1,0 +1,55 @@
+﻿/* contact.css */
+
+/* Center the form */
+form {
+  max-width: 600px;
+  margin: 40px auto; /* Added top and bottom margin */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure contents don't overflow */
+}
+
+/* Style the labels */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style the input fields and textarea */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: calc(80% - 22px); /* Adjust width to fit within the padding */
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+
+/* Style for error messages */
+.error-message {
+  color: red;
+  font-size: 0.875rem;
+  margin-bottom: 15px;
+}

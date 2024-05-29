@@ -1,10 +1,10 @@
-﻿﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="index.css">
   <title>FlavorFusion - Home</title>
 </head>
 <body>
@@ -14,35 +14,45 @@
       .then(data => {
         document.body.insertAdjacentHTML('afterbegin', data);
       });
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML('beforeend', data);
+      });
   </script>
   <div class="banner">
     <h1>FlavorFusion</h1>
   </div>
-  <p>
-    Introducing FlavorFusion, the ultimate destination for food enthusiasts to discover,
-    share, and explore delicious recipes worldwide! Whether you're a seasoned chef or a passionate
-    home cook, FlavorFusion offers diverse recipes to suit every palate and occasion.
-  </p>
+  <div class="homeContainer">
+    <p class="centered-paragraph">
+      Introducing FlavorFusion, the ultimate destination for food enthusiasts to discover,
+      share, and explore delicious recipes worldwide! Whether you're a seasoned chef or a passionate
+      home cook, FlavorFusion offers diverse recipes to suit every palate and occasion.
+    </p><hr>
+    <h3>Recipe Highlights</h3>
+    <div class="image-container">
+      <img src="photo/Padkrapao.jpg" class="center-image" alt="Home Photo">
+      <img src="photo/homePic.jpg" class="center-image" alt="Home Photo">
+      <img src="photo/PadThai.jpg" class="center-image" alt="Home Photo">
+    </div><br><br>
 
-  <div class="Image">
-    <img src="photo/food1.jpg" width="400" height="400" alt="Home Photo">
-    <img src="photo/homePic.jpg" width="400" height="400" alt="Home Photo">
-    <img src="photo/food2.jpg" width="400" height="400" alt="Home Photo">
+    <hr>
+    <h2>Recipe City?</h2>
+    <p class="centered-paragraph">
+      Visit our Recipe City section and discover a world of delights. Simply register with your email to
+      create a profile. You will stay informed about food trends and any community featured recipes by subscribing
+      to our newsletter and dive into our Recipe City Promotions and Events. Whether you're in the mood for starters,
+      main courses, desserts, or drinks, we've got everything you need.
+    </p>
+    <hr>
+    <h2>Join Us</h2>
+    <p class="centered-paragraph">
+      Be a part of our expanding community and celebrate the pleasure of cooking with us. Whether you're a chef or
+      an enthusiastic home cook, FlavorFusion invites you to discover, share, and connect with food enthusiasts.
+      Embark on your journey with us today!
+    </p>
+    <hr>
+    <hr class="new2">
   </div>
-  <h3>
-    Recipe Highlights
-  </h3>
-  <h2>
-    Recipe City?
-  </h2>
-  <p>
-    Visit our Recipe City section and discover a world of delights. Simply register with your email to
-    create a profile. You will stay informed about food trends and any community featured recipes by subscribing
-    to our newsletter and dive into our Recipe City Promotions and Events. Whether you're in the mood for starters,
-    main courses, desserts, or drinks, we've got everything you need.
-  </p>
-
-  </div>
-  <p>This is the homepage content. Feel free to introduce your website here.</p>
 </body>
 </html>

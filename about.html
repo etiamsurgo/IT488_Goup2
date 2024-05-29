@@ -1,23 +1,89 @@
-﻿﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>FlavorFusion - About</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
+    <title>FlavorFusion - Home</title>
 </head>
 <body>
-  <script>
-    fetch('menu.html')
-      .then(response => response.text())
-      .then(data => {
-        document.body.insertAdjacentHTML('afterbegin', data);
-      });
-  </script>
-  <div class="banner">
-    <h1>About Us</h1>
-  </div>
-  <p>***This is the about page content. You can describe your website or yourself here.***</p>
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            });
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+    </script>
+    <div class="banner">
+        <h1>About Us</h1>
+    </div>
+    <div class="aboutUsContainer">
+        <p class="centered-paragraph">
+            Welcome to Recipe City, the hub of FlavorFusion! This website is where food lovers gather
+            to explore flavors and exchange recipes. Connect with like-minded individuals, experience different cultures
+            through food, and enjoy delicious meals from all over the world. Our user-friendly platform allows for navigation
+            through sections, providing a pleasant experience for sharing recipes at any skill level.
+        </p>
+
+        <p class="centered-paragraph">
+            At FlavorFusion, we believe that food is more than just sustenance—it's a journey that brings
+            people together. Whether you're a seasoned chef or a beginner cook, you'll find a growing community that supports and
+            inspires you. Our extensive recipe collection caters to tastes from around the world, ensuring that everyone
+            can find something they love.
+        </p>
+
+        <p class="centered-paragraph">
+            You will find that our community is passionate about celebrating the diversity of culinary traditions.
+            Our platform features recipes from every corner of the globe, allowing you to travel the world through your kitchen.
+            From spicy Southern comfort meals to delicious Thai cuisine, there's always something new to discover.
+        </p>
+
+        <hr>
+
+        <h2>Get To Know Us</h2>
+
+        <p class="centered-paragraph">
+            Our team came up with the concept of FlavorFusion in 2024. Our goal was to create a resourceful site
+            filled with amazing dishes from around the world. These are the founding members of FlavorFusion:
+        </p>
+
+        <h3>Chef Jamie</h3>
+        <p class="centered-paragraph">
+            (Fill Out Your Section!)
+        </p>
+        <h3>Chef Javier</h3>
+        <p class="centered-paragraph">
+            (Fill Out Your Section!)
+        </p>
+        <h3>Chef Cirelli</h3>
+        <p class="centered-paragraph">
+            (Fill Out Your Section!)
+        </p>
+        <h3>Dwayne</h3>
+        <p class="centered-paragraph">
+            Dwayne was born and raised in Chicago, IL. He has family in the South, where he learned his Southern-style
+            approach to cooking. His passion for Southern-style recipes was further increased due to his time serving in the military.
+            Dwayne served as an Infantryman in the Minnesota Army National Guard. His One Station Unit Training (OSUT) was done in
+            Fort Moore, Georgia, previously known as Fort Benning. After his service, he was eager to share the recipes he acquired.
+        </p>
+        <h3>Recipe City</h3>
+        <p class="centered-paragraph">
+            If you wish to discover the amazing recipes provided by our chefs, then head over to <a href="recipes.html">Recipe City</a>!!!
+        </p>
+        <hr>
+        <h2>Contact Us</h2>
+        <p class="centered-paragraph">
+            Are you ready to join the FlavorFusion community? You can reach the FlavorFusion team by <a href="contact.html">email</a>. We look
+            forward to hearing any questions or concerns. We welcome you to reach out to us!
+        </p>
+        <hr>
+        <hr class="new2">
+    </div>
 </body>
 </html>
