@@ -3,12 +3,12 @@
 /* Center the form */
 form {
   max-width: 600px;
-  margin: 40px auto; /* Added top and bottom margin */
+  margin: 40px auto;
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Ensure contents don't overflow */
+  overflow: hidden;
 }
 
 /* Style the labels */
@@ -19,11 +19,17 @@ label {
   color: #333;
 }
 
+/* Flexbox container for input and error message */
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
 /* Style the input fields and textarea */
 input[type="text"],
 input[type="email"],
 textarea {
-  width: calc(80% - 22px); /* Adjust width to fit within the padding */
+  width: 80%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
@@ -51,5 +57,11 @@ input[type="submit"] {
 .error-message {
   color: red;
   font-size: 0.875rem;
-  margin-bottom: 15px;
+  margin-left: 10px;
+  width: 20%;
+}
+
+/* Style form group to ensure proper layout */
+.form-group {
+  margin-bottom: 20px;
 }

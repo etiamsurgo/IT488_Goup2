@@ -27,17 +27,29 @@
     Feel free to reach out to us using the form below:
   </p>
   <form id="contactForm">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    <span class="error-message" id="nameError"></span>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <div class="input-container">
+        <input type="text" id="name" name="name" required>
+        <span class="error-message" id="nameError"></span>
+      </div>
+    </div>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-    <span class="error-message" id="emailError"></span>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <div class="input-container">
+        <input type="email" id="email" name="email" required>
+        <span class="error-message" id="emailError"></span>
+      </div>
+    </div>
 
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="4" required></textarea>
-    <span class="error-message" id="messageError"></span>
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <div class="input-container">
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <span class="error-message" id="messageError"></span>
+      </div>
+    </div>
 
     <input type="submit" value="Send">
   </form>
