@@ -1,5 +1,25 @@
-﻿.footer-copyright {
-  font-size: 10px; /* Adjust this value to your desired font size */
+﻿.chef-bio {
+  display: flex;
+  align-items: flex-start;
+  margin: 20px 20%;
+  gap: 20px;
+}
+
+.chef-photo {
+  width: 150px; /* Fixed width for the images */
+  height: auto; /* Auto height to maintain aspect ratio */
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .chef-bio {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chef-photo {
+    width: 120px; /* Adjust width for smaller screens */
+  }
 }
 
 .centered-paragraph {
@@ -8,7 +28,7 @@
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: left;
-  line-height: 1.8; /* Increased line height for better readability */
+  line-height: 1.8;
 }
 
 body, h1, h2, h3, p, ul, li, form, input, textarea {
@@ -93,26 +113,45 @@ nav {
     }
 
 footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #0d1321;
+  padding: 20px 0;
+  color: #f0ebd8;
 }
 
-  footer a {
-    display: inline-block;
-    padding: 30px 50px;
-    margin-right: 10px;
-    color: #f0ebd8;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.footer-copyright {
+  font-size: 12px; /* Adjust the size as needed */
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+footer .nav-bar {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+footer .logo {
+  margin-bottom: 10px;
+}
+
+footer nav a {
+  padding: 10px 20px;
+  margin: 5px;
+}
+
+  footer nav a:hover {
+    background-color: #eee;
+    color: #0d1321;
   }
 
-    footer a:hover {
-      background-color: #eee;
-      color: #0d1321;
-    }
+hr {
+  border: none; /* Remove default border */
+  height: 1.5px; /* Set the height */
+  background-color: #bc6c25; /* Set the color */
+  margin: 15px 15%; /* Set the margin */
+}
 
-main {
-  padding: 20px;
-  background-color:
+@media (max-width: 768px) {
+  hr {
+    margin: 20px 10%; /* Adjust margin for smaller screens */
+  }
+}
