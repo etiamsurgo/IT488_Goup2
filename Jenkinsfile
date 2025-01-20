@@ -4,13 +4,16 @@ pipeline {
     environment {
         GIT_REPO = 'https://github.com/etiamsurgo/IT488_Group2.git'
         BRANCH = 'main' // Replace with the appropriate branch if needed
+        GIT_CREDENTIALS_ID = 'jenkins_test' // Use the ID of your Jenkins credential
     }
 
     stages {
         stage('Clone Repository') {
             steps {
                 echo 'Cloning repository...'
-                git branch: "${BRANCH}", url: "${GIT_REPO}"
+                git branch: "${BRANCH}",
+                    url: "${GIT_REPO}",
+                    credentialsId: "${GIT_CREDENTIALS_ID}"
             }
         }
 
